@@ -8,10 +8,10 @@ This project demonstrates
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/GgMPIi-hsTo&mute=1"></iframe>
+    src="https://www.youtube.com/embed/GgMPIi-hsTo?enablejsapi=1&mute=1"></iframe>
 </div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GgMPIi-hsTo&mute=1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GgMPIi-hsTo?enablejsapi=1&mute=1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 
 ## Project Goals
