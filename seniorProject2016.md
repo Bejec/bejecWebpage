@@ -1,6 +1,15 @@
-# Project Alpha: Real-time Data Analytics Pipeline
+# Senior Project 2016: Real-time Data Analytics Pipeline
 
-This project demonstrates a real-time data analytics pipeline built on Google Cloud. It ingests data from a streaming source, performs real-time processing and analysis, and stores the results for visualization and further analysis.
+This project demonstrates
+
+## Test youtube video embedding
+
+<div class="video-container-16by9">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/shorts/GgMPIi-hsTo"></iframe>
+</div>
 
 ## Project Goals
 

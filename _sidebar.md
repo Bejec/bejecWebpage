@@ -2,7 +2,7 @@
 
 * [Home](/)
 * **Projects:**
-    * [Project Alpha](project-alpha.md)
+    * [Senior Project](seniorProject2016.md)
     * [Project Beta](project-beta.md)
     * [Project Gamma](project-gamma.md)
     * [Project Delta](project-delta.md)
