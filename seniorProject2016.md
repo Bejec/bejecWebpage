@@ -8,8 +8,11 @@ This project demonstrates
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/shorts/GgMPIi-hsTo"></iframe>
+    src="https://www.youtube.com/embed/GgMPIi-hsTo"></iframe>
 </div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GgMPIi-hsTo" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
 
 ## Project Goals
 
