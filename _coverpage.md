@@ -1,8 +1,8 @@
-# My Project Portfolio
+# Bejecs Project Portfolio
 
 **Showcasing my non-professional hobby projects**
 
-[Get Started](/)
+[vvvv Scroll Down vvvv](/)
 
 
 <!-- optional background image
