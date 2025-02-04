@@ -14,7 +14,7 @@ Here are a few highlights:
 
 ## Work in Progress
 
-**[Phaseless BLDC Motor:](phaselessBLDCMotor.md)**]
+**[Phaseless BLDC Motor:](phaselessBLDCMotor.md)**
 Currently I am working on what I call a phaseless brushless DC axial flux motor.  3-phase motors are typical because they were born from the 3-phase power generation and distribution.  4-5-6-phase designs were previously explored but the tradeoffs were not worth the increase in complexity.  Time to revisit this "too complex notion".  Many design aspects are changed, but allows for the follow optimizations below.
 
 I'm constantly adding new projects, so be sure to check back often!
