@@ -1,8 +1,8 @@
 # Senior Project 2016: Real-time Data Analytics Pipeline
 
-This project demonstrates
+This project demonstrates using super resolution with image stacking in real time.
 
-## Test youtube video embedding
+## Thermal Video with no image stacking
 
 <div class="video-container-16by9">
   <iframe
@@ -11,40 +11,76 @@ This project demonstrates
     allowfullscreen
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/GgMPIi-hsTo?enablejsapi=1&mute=1"></iframe>
+    src="https://www.youtube.com/embed/8_6H-6UjcI4?enablejsapi=1&mute=1"></iframe>
 </div>
 
+The video above is a baseline with no image stacking.
+
+<div class="video-container-16by9">
+  <iframe
+    frameborder="0"
+    title="YouTube video player"
+    allowfullscreen
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/NU_S2Dr9wsc?enablejsapi=1&mute=1"></iframe>
+</div>
+
+The video above shows the video with image stacking in real time.
+
+<div class="video-container-16by9">
+  <iframe
+    frameborder="0"
+    title="YouTube video player"
+    allowfullscreen
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/z4xqAWDtc-M?enablejsapi=1&mute=1"></iframe>
+</div>
+
+The video above shows pixel peeking comparison of unstacked image with stacked image.  You can see the artifacts of the stacking during quick movements.  The weather was also windy which decreases photostacking accuracy.
 
 ## Project Goals
 
-The main objectives of this project were:
+Explore photo stacking in real time with keypoint matching.
 
-* **Real-time Ingestion:** Capture streaming data from a high-volume source with minimal latency.
-* **Real-time Processing:** Perform data transformations and aggregations in real-time.
-* **Scalability and Reliability:** Ensure the pipeline can handle fluctuating data volumes and maintain high availability.
-* **Actionable Insights:**  Provide real-time insights to inform business decisions.
+The thermal camera image resolution is 384x288.  Stacking the image 5 times yields a resolution "increase" of 960x720.
 
-## Architecture
-
-The project utilizes several Google Cloud services to achieve these goals:
-
-* **Data Source:** Simulated streaming data (could be replaced with a real-time source like Pub/Sub).
-* **Data Ingestion:** Cloud Pub/Sub for reliable message delivery.
-* **Stream Processing:** Cloud Dataflow for real-time data processing and transformations.
-* **Data Storage:** BigQuery for storing processed data and enabling analytical queries.
-* **Visualization:** Looker Studio (formerly Data Studio) for visualizing the results.
-
-A simplified diagram of the architecture could be included here.  (Since I cannot access external resources, I can't create a visual diagram, but you would typically include one here in your `project-alpha.md` file).
+The image stacking code can be found [here](https://github.com/Bejec/realTimeSuperRes)
 
 
-## Key Technologies
+## Explanation
 
-* **Cloud Pub/Sub:**  Handles message ingestion and provides a scalable and reliable messaging service.
-* **Cloud Dataflow:** Enables real-time data processing with built-in capabilities for windowing, aggregations, and transformations.
-* **BigQuery:**  Provides a scalable data warehouse for storing and querying large datasets.
-* **Looker Studio:**  Allows for creating interactive dashboards and visualizations to explore the processed data.
+Photo stacking is simply taking multiple images, upsampling them all to a higher resolution and averaging out the images together.  This "increases" the resolution by using noise to add data within an image.
 
-## Code Example (Conceptual)
+If the images are slightly shifted from each other then you need to add in keypoint matching.  This function will identify unique keypoints on two images and shift and bend one of the image to align, then photo stacking can be applied.
 
-While I cannot provide real code here, I can offer a conceptual example of a Dataflow pipeline:
+The real time aspect of it is not exactly real-time, it is delayed by 1 frame.  I applied the same concepts as a FIR filter or emacs filter which basically aligns the previous image with the current image then photo stacks them and displays them to the user.
+
+## Notes
+
+Thermal cameras have low framerates, so stacking 5 images on a 25Hz framerate will mean that the oldest stacked image is 200ms old.  You can see this when the dog turns his head and you can see a ghosting affect.  This method is not good for fast moving subjects.
+
+This is running on one core, no multithreading Intel Celeron N4100 mobile computer.  Keypoint matching is a very intensive process, lowering amount of keypoints decreases alignment but increases performance.
+
+I did add software logic to cancel alignment if keypoint matching takes longer than 1/25hz (40ms) and just display the latest image. This reduced stuttering greatly, yet you can still observe stuttering in the video.
+
+Whats cool is that you can increase processing which is much cheaper than speccing a higher resolution camera.
+
+Photo stacking may not always increase resolution and has a change to introduce artifacts.
+
+
+![Super Resolution of Kiwi](./images/SeniorProjectWiring.png)
+
+Heres an example of a 19x increase in pixel stacking with many images. Although effective increase is more like 2-3x. Input image is multiple 384x288(left) images, I forget how many I stacked.  Output image is 1920x1080(right)
+
+
+[Link to Thermal Camera used](https://hti-instrument.com/collections/best-sellers/products/ht-301-mobile-phone-thermal-imager)
+
+
+## Future Considerations
+
+Multiprocessing can be applied to run keypoint matching on a dedicated core, while the capturing and stacking of the images can be done on the main core.  This can reduce stuttering greatly and can open up more resources for stacking more images to increase resolution.  Multithreading is not ideal as this can cause deadlock which may increase stuttering.
+
+Gyroscope data with SLAM can reduce number of keypoints which can reduce processing.
 
