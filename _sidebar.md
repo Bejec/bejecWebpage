@@ -3,7 +3,7 @@
 * [Home](/)
 * **Projects:**
     * [Senior Project](seniorProject2016.md)
-    * [Project Beta](dualBatteryEBike.md)
-    * [Project Gamma](eyeMouse.md)
-    * [Project Delta](realTimeSuperResolution.md)
+    * [Dual Battery Chemistry EBike](dualBatteryEBike.md)
+    * [Eye Mouse](eyeMouse.md)
+    * [Real Time Super Resolution](realTimeSuperResolution.md)
     * [Phaseless BLDC Motor](phaselessBLDCMotor.md)
