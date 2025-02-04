@@ -70,7 +70,7 @@ Whats cool is that you can increase processing which is much cheaper than specci
 Photo stacking may not always increase resolution and has a change to introduce artifacts.
 
 
-![Super Resolution of Kiwi](./images/SeniorProjectWiring.png)
+![Super Resolution of Kiwi](./images/SuperResolutionKiwi.jpg)
 
 Heres an example of a 19x increase in pixel stacking with many images. Although effective increase is more like 2-3x. Input image is multiple 384x288(left) images, I forget how many I stacked.  Output image is 1920x1080(right)
 
