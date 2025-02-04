@@ -6,4 +6,4 @@
     * [Dual Battery Chemistry EBike](dualBatteryEBike.md)
     * [Eye Mouse](eyeMouse.md)
     * [Real Time Super Resolution](realTimeSuperResolution.md)
-    * [Phaseless BLDC Motor](phaselessBLDCMotor.md)
+    * [WiP Phaseless BLDC Motor](phaselessBLDCMotor.md)
