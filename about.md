@@ -18,6 +18,11 @@ Current Priorities:
 3. Growing my side hustle business.
 4. Enjoying life!
 
+BackBurner and other Side Projects:
+Phaseless Motor Design
+Crossbow Knife
+Pnuematic Pop Knife
+
 
 
 
