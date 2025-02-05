@@ -19,9 +19,9 @@ Current Priorities:
 4. Enjoying life!
 
 BackBurner and other Side Projects:
-Phaseless Motor Design
-Crossbow Knife
-Pnuematic Pop Knife
+1. Phaseless Motor Design
+2. Crossbow Knife
+3. Pnuematic Pop Knife
 
 
 
