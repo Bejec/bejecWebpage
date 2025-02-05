@@ -1,6 +1,12 @@
-# Senior Project 2016: Real-time Data Analytics Pipeline
+# EyeMouse Project
 
-This project demonstrates
+This project demonstrates using eye tracking to take control of mouse movement.  
+I also explored using multiprocessing and multithreading to enhance performance.
+[Github Project Link](https://github.com/Bejec/FocusFinder)
+
+The idea that started the project is that nothing beats pixels per degree (PPD) than a monitor at a distance away from you.  So instead of creating an AR/VR/XR environment, just use any screens as the environment.  This is more for using the eyes as a human input device rather than creating objects in the environment.
+
+Project was ultimately terminated because of my lack of skill with optics and 3D CAD design.  Ideally the camera should have low FOV, high resolution and positioned in front of the eye.  Was going to use a glass panel to reflect eye image to a camera pointing downward.
 
 ## Test youtube video embedding
 
@@ -11,40 +17,41 @@ This project demonstrates
     allowfullscreen
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/GgMPIi-hsTo?enablejsapi=1&mute=1"></iframe>
+    src="https://www.youtube.com/embed/dW3LniF6BbY?enablejsapi=1&mute=1"></iframe>
 </div>
 
+The video above shows a mapping of where the eye is looking at on the screen.  You do have to keep your head in the same position as the point of this is to enable gaze visualization in the video below.
+
+<div class="video-container-16by9">
+  <iframe
+    frameborder="0"
+    title="YouTube video player"
+    allowfullscreen
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/jEYcn5cFrLg?enablejsapi=1&mute=1"></iframe>
+</div>
+
+The video above is the furthest I got with what I was trying to achieve.  There is a camera on my forehead that is looking forward. Then there are two cameras looking at my eyeballs.  The eye tracking will cut out and move a window in the forward looking video to show what I am seeing.  The video is very jumpy since I favored accuracy and speed over smoothness.
 
 ## Project Goals
 
-The main objectives of this project were:
+The main objectives of this project were to explore how much computation is needed to track eye movement
+with an accuracy that rivals real eyesight.  A lot of computation is needed for accurate and quick eye tracking.  To get better image either the camera FOV needs to be reduced (zoomed in) or placed closer to the eye.
 
-* **Real-time Ingestion:** Capture streaming data from a high-volume source with minimal latency.
-* **Real-time Processing:** Perform data transformations and aggregations in real-time.
-* **Scalability and Reliability:** Ensure the pipeline can handle fluctuating data volumes and maintain high availability.
-* **Actionable Insights:**  Provide real-time insights to inform business decisions.
-
-## Architecture
-
-The project utilizes several Google Cloud services to achieve these goals:
-
-* **Data Source:** Simulated streaming data (could be replaced with a real-time source like Pub/Sub).
-* **Data Ingestion:** Cloud Pub/Sub for reliable message delivery.
-* **Stream Processing:** Cloud Dataflow for real-time data processing and transformations.
-* **Data Storage:** BigQuery for storing processed data and enabling analytical queries.
-* **Visualization:** Looker Studio (formerly Data Studio) for visualizing the results.
-
-A simplified diagram of the architecture could be included here.  (Since I cannot access external resources, I can't create a visual diagram, but you would typically include one here in your `project-alpha.md` file).
+## Code:
+[Github Project Link](https://github.com/Bejec/FocusFinder)
 
 
-## Key Technologies
+## Extra Video for seeing eye saccades
 
-* **Cloud Pub/Sub:**  Handles message ingestion and provides a scalable and reliable messaging service.
-* **Cloud Dataflow:** Enables real-time data processing with built-in capabilities for windowing, aggregations, and transformations.
-* **BigQuery:**  Provides a scalable data warehouse for storing and querying large datasets.
-* **Looker Studio:**  Allows for creating interactive dashboards and visualizations to explore the processed data.
-
-## Code Example (Conceptual)
-
-While I cannot provide real code here, I can offer a conceptual example of a Dataflow pipeline:
+<div class="video-container-16by9">
+  <iframe
+    frameborder="0"
+    title="YouTube video player"
+    allowfullscreen
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/VzT1Xz3-9jY?enablejsapi=1&mute=1"></iframe>
+</div>
 
