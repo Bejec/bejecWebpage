@@ -2,7 +2,7 @@
 
 **Showcasing my non-professional hobby projects**
 
-[vvvv Scroll Down vvvv](/# My Awesome Projects)
+[vvvv Scroll Down vvvv](index.md)
 
 
 <!-- optional background image
