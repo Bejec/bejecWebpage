@@ -4,8 +4,6 @@ This project demonstrates building a dual cell chemistry ebike.
 
 ![sideProfile](./images/ebike.png)
 
-## Test youtube video embedding
-
 <div class="video-container-16by9">
   <iframe
     frameborder="0"

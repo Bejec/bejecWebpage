@@ -8,8 +8,6 @@ The idea that started the project is that nothing beats pixels per degree (PPD) 
 
 Project was ultimately terminated because of my lack of skill with optics and 3D CAD design.  Ideally the camera should have low FOV, high resolution and positioned in front of the eye.  Was going to use a glass panel to reflect eye image to a camera pointing downward.
 
-## Test youtube video embedding
-
 <div class="video-container-16by9">
   <iframe
     frameborder="0"
